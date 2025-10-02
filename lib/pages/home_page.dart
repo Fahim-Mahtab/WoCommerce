@@ -3,6 +3,7 @@ import "package:woo_commerce/data/categories_data.dart";
 import '../components/my_card.dart';
 import 'package:woo_commerce/data/discount_data.dart';
 import '../components/my_circle_avatar.dart';
+import '../components/my_prod_column.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -96,40 +97,16 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  itemCount: 5,
+                  itemCount: 4,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 5.0,
                     crossAxisSpacing: 5.0,
                     crossAxisCount: 2,
-                    childAspectRatio: 0.70,
+                    childAspectRatio: 0.73,
                   ),
                   itemBuilder: (context, index) {
-                    return Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Stack(
-                        children: [
-                          Image.network(
-                            "https://toptenmartltd.com/wp-content/uploads/2025/09/shirt.jpg",
-                            fit: BoxFit.contain,
-                          ),
-                          Positioned(
-                            bottom: 10,
-                            left: 10,
-                            right: 0,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("\$50.00", style: TextStyle(fontSize: 16)),
-                                Text("Shirt", style: TextStyle(fontSize: 16)),
-                                Text("Shirt", style: TextStyle(fontSize: 16)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    return MyProdColumn(imageUrl: 'https://toptenmartltd.com/wp-content/uploads/2025/09/shirt.jpg', price: '\$50', title: 'Red Shirt',rating: '5*',
+
                     );
                   },
                 ),
@@ -161,3 +138,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
