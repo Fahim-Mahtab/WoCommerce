@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:woo_commerce/pages/home_page.dart';
+import 'package:woo_commerce/pages/landing_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Woo Commerce",
-      home: HomePage(),
+      home: LandingPage(),
     );
   }
 }
