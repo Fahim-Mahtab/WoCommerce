@@ -10,7 +10,10 @@ class MyCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CircleAvatar(radius: 40, backgroundImage: NetworkImage(imageUrl)),
+        Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: CircleAvatar(radius: 40, backgroundImage: NetworkImage(imageUrl)),
+        ),
         Text(items),
       ],
     );

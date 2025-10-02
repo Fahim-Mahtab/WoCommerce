@@ -4,6 +4,7 @@ import '../components/my_card.dart';
 import 'package:woo_commerce/data/discount_data.dart';
 import '../components/my_circle_avatar.dart';
 import '../components/my_prod_column.dart';
+import '../data/new_prod_data.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,15 +28,21 @@ class HomePage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.store,size: 30,color: Colors.pinkAccent,),
+                          Icon(Icons.store, size: 30, color: Colors.pinkAccent),
                           SizedBox(width: 5),
-                          Text("WooCommerce",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+                          Text(
+                            "WooCommerce",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
                         children: [
-                          Icon(Icons.search,color: Colors.black,),
-                          SizedBox(width: 10,),
+                          Icon(Icons.search, color: Colors.black),
+                          SizedBox(width: 10),
                           Icon(Icons.notifications_active_outlined),
                           SizedBox(width: 10),
                           Icon(Icons.shopping_cart_outlined),
@@ -87,7 +94,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 15),
                 child: Align(
                   alignment: Alignment.topLeft, // Pre-defined positions
-                  child: Text('New Products', style: TextStyle(fontSize: 20)),
+                  child: Text('New Products', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                 ),
               ),
               SizedBox(height: 5),
@@ -97,40 +104,23 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
-                  itemCount: 4,
+                  itemCount: NewProdData.newProducts.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 5.0,
                     crossAxisSpacing: 5.0,
                     crossAxisCount: 2,
-                    childAspectRatio: 0.73,
+                    childAspectRatio: 0.55,
                   ),
                   itemBuilder: (context, index) {
-                    return MyProdColumn(imageUrl: 'https://toptenmartltd.com/wp-content/uploads/2025/09/shirt.jpg', price: '\$50', title: 'Red Shirt',rating: '5*',
-
+                    return MyProdColumn(
+                      imageUrl: NewProdData.newProducts[index]['imageUrl']!,
+                      price: NewProdData.newProducts[index]['price']!,
+                      title: NewProdData.newProducts[index]['title']!,
+                      rating: NewProdData.newProducts[index]['rating']!,
                     );
                   },
                 ),
               ),
-
-              /*  SizedBox(
-                height: 200,
-                width: double.infinity,
-                child: GridView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: DiscountDataData.discounts.length,
-                  itemBuilder: (context, index) {
-                    return MyCard(
-                      discount: DiscountDataData.discounts[index]['discount']!,
-                      discountImage:
-                          DiscountDataData.discounts[index]['discountImage']!,
-                    );
-                  },
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                  ),
-                ),
-              ),*/
             ],
           ),
         ),
@@ -138,5 +128,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

@@ -18,17 +18,27 @@ class MyProdColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+        SizedBox(
+          height: 300,
+          width: 200,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            clipBehavior: Clip.antiAlias,
+            child: Image.network(imageUrl, fit: BoxFit.cover,),
           ),
-          clipBehavior: Clip.antiAlias,
-          child: Image.network(imageUrl, fit: BoxFit.contain),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 15),
-          child: Column(children: [Text(price), Text(title), Text(rating)]),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [Text(price,style: TextStyle(fontWeight: FontWeight.bold),), Text(title), Text(rating,),],
+          ),
+
         ),
       ],
     );
