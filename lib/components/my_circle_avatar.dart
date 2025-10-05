@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:woo_commerce/pages/kids_section.dart';
+
+import '../pages/men_section.dart';
+import '../pages/women_section.dart';
 
 class MyCircleAvatar extends StatelessWidget {
   final String imageUrl;
   final String items;
 
-  const MyCircleAvatar({super.key, required this.imageUrl, required this.items});
+  const MyCircleAvatar({
+    super.key,
+    required this.imageUrl,
+    required this.items,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +20,30 @@ class MyCircleAvatar extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(5.0),
-          child: CircleAvatar(radius: 40, backgroundImage: NetworkImage(imageUrl)),
+          child: GestureDetector(
+            child: CircleAvatar(
+              radius: 40,
+              backgroundImage: NetworkImage(imageUrl),
+            ),
+            onTap: () {
+              if (items == 'Men') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MenSection()),
+                );
+              } else if (items == 'Kids') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => KidsSection()),
+                );
+              } else if (items == 'Women') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WomenSection()),
+                );
+              }
+            },
+          ),
         ),
         Text(items),
       ],

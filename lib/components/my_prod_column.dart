@@ -28,7 +28,7 @@ class MyProdColumn extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             clipBehavior: Clip.antiAlias,
-            child: Image.network(imageUrl, fit: BoxFit.cover,),
+            child: Image.network(imageUrl, fit: BoxFit.cover),
           ),
         ),
         Padding(
@@ -36,9 +36,33 @@ class MyProdColumn extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Text(price,style: TextStyle(fontWeight: FontWeight.bold),), Text(title), Text(rating,),],
+            children: [
+              Text(price, style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(title),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: Colors.black87, // dark background
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      rating,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                    const SizedBox(width: 3),
+                    const Icon(Icons.star, color: Colors.white, size: 14),
+                  ],
+                ),
+              ),
+            ],
           ),
-
         ),
       ],
     );
