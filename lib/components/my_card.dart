@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCard extends StatelessWidget {
   final String discount;
@@ -12,14 +13,14 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
       clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
           Image.network(
             discountImage,
-            height: 200,
-            width: 300,
+            height: 200.h,
+            width: 300.w,
             fit: BoxFit.cover,
           ),
           Positioned(
@@ -27,8 +28,8 @@ class MyCard extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
+              padding: EdgeInsets.all(15.w),
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
@@ -36,12 +37,12 @@ class MyCard extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0.w),
                 child: Text(
                   "UP TO \n$discount% OFF",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

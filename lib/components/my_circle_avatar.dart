@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:woo_commerce/pages/kids_section.dart';
 
 import '../pages/men_section.dart';
@@ -19,10 +20,10 @@ class MyCircleAvatar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(5.0.w),
           child: GestureDetector(
             child: CircleAvatar(
-              radius: 40,
+              radius: 40.r,
               backgroundImage: NetworkImage(imageUrl),
             ),
             onTap: () {
@@ -45,7 +46,7 @@ class MyCircleAvatar extends StatelessWidget {
             },
           ),
         ),
-        Text(items),
+        Text(items, style: TextStyle(fontSize: 14.sp)),
       ],
     );
   }

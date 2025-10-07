@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import "package:woo_commerce/data/categories_data.dart";
 import '../components/my_card.dart';
 import 'package:woo_commerce/data/discount_data.dart';
@@ -24,7 +25,7 @@ class LandingPage extends StatelessWidget {
                   children: List.generate(
                     CategoriesData.categories.length,
                     (index) => Padding(
-                      padding: const EdgeInsets.only(right: 5),
+                      padding: EdgeInsets.only(right: 5.w),
                       child: MyCircleAvatar(
                         imageUrl: CategoriesData.categories[index]['imageUrl']!,
                         items: CategoriesData.categories[index]['items']!,
@@ -33,11 +34,11 @@ class LandingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0.w),
                 child: SizedBox(
-                  height: 200,
+                  height: 200.h,
                   width: double.infinity,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -53,30 +54,30 @@ class LandingPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 5.h),
               Padding(
-                padding: const EdgeInsets.only(left: 15),
+                padding: EdgeInsets.only(left: 15.w),
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
                     'New Products',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 5.h),
               Padding(
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10.w),
                 child: GridView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   itemCount: NewProdData.newProducts.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 5.0,
-                    crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 5.0.w,
+                    crossAxisSpacing: 5.0.w,
                     crossAxisCount: 2,
-                    childAspectRatio: 0.55,
+                    childAspectRatio: 0.6,
                   ),
                   itemBuilder: (context, index) {
                     return MyProdColumn(

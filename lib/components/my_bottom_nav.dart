@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyBottomNav extends StatelessWidget {
   final int currentIndex;
@@ -16,7 +17,10 @@ class MyBottomNav extends StatelessWidget {
       selectedItemColor: Colors.blueGrey,
       unselectedItemColor: Colors.grey,
       showUnselectedLabels: true,
-      items: [
+      iconSize: 24.sp,
+      selectedFontSize: 12.sp,
+      unselectedFontSize: 12.sp,
+      items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
         BottomNavigationBarItem(
           icon: Icon(Icons.category_outlined),

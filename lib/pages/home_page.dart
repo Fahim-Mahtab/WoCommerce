@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:woo_commerce/pages/account_page.dart';
 import 'package:woo_commerce/pages/landing_page.dart';
 import 'package:woo_commerce/pages/category_page.dart';
@@ -38,38 +39,41 @@ class _HomePageState extends State<HomePage> {
           elevation: 2,
           title: Row(
             children: [
-              Icon(Icons.store, size: 30, color: Colors.pinkAccent),
-              const SizedBox(width: 8),
-              const Text(
+              Icon(Icons.store, size: 30.sp, color: Colors.pinkAccent),
+              SizedBox(width: 8.w),
+              Text(
                 "WooCommerce",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
+                  fontSize: 20.sp,
                 ),
               ),
             ],
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.search, color: Colors.black),
+              icon: Icon(Icons.search, color: Colors.black, size: 24.sp),
               onPressed: () {
               },
             ),
             IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.notifications_active_outlined,
                 color: Colors.black,
+                size: 24.sp,
               ),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.black,
+                size: 24.sp,
               ),
               onPressed: () {},
             ),
-            const SizedBox(width: 10),
+            SizedBox(width: 10.w),
           ],
         ),
         body: _pages[_selectedIndex],

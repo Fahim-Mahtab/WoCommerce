@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:woo_commerce/pages/product_detail_page.dart';
 
 class MyProdColumn extends StatelessWidget {
@@ -35,44 +36,49 @@ class MyProdColumn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 300,
-            width: 200,
+          Expanded(
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(20.r),
               ),
               clipBehavior: Clip.antiAlias,
-              child: Image.network(imageUrl, fit: BoxFit.cover),
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(Icons.error);
+                },
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15),
+            padding: EdgeInsets.all(8.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(price, style: TextStyle(fontWeight: FontWeight.bold)),
-                Text(title),
+                Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp)),
+                Text(title, style: TextStyle(fontSize: 12.sp), overflow: TextOverflow.ellipsis),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                   decoration: BoxDecoration(
                     color: Colors.black87, // dark background
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(6.r),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         rating,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 12,
+                          fontSize: 12.sp,
                         ),
                       ),
-                      const SizedBox(width: 3),
-                      const Icon(Icons.star, color: Colors.white, size: 14),
+                      SizedBox(width: 3.w),
+                      Icon(Icons.star, color: Colors.white, size: 14.sp),
                     ],
                   ),
                 ),
