@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:woo_commerce/components/my_prod_column.dart';
 
-import '../components/my_card.dart';
 import '../data/kids_data.dart';
 
 class KidsSection extends StatelessWidget {
@@ -35,7 +34,6 @@ class KidsSection extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            Column(),
           ],
         ),
         body: SingleChildScrollView(
@@ -48,7 +46,7 @@ class KidsSection extends StatelessWidget {
                   child: Container(
                     height: 130,
                     width: double.infinity,
-                    decoration: BoxDecoration(color: Color(0xFFE5E5E5)),
+                    decoration: const BoxDecoration(color: Color(0xFFE5E5E5)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -113,7 +111,7 @@ class KidsSection extends StatelessWidget {
                 child: GridView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: KidsData.kidsProducts.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: 5.0,

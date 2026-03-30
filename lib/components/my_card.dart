@@ -22,6 +22,8 @@ class MyCard extends StatelessWidget {
             height: 200.h,
             width: 300.w,
             fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) =>
+                const Center(child: Icon(Icons.broken_image, size: 48)),
           ),
           Positioned(
             bottom: 0,

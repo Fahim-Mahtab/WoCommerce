@@ -12,10 +12,8 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
+    return SingleChildScrollView(
+      child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SingleChildScrollView(
@@ -42,13 +40,13 @@ class LandingPage extends StatelessWidget {
                   width: double.infinity,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: DiscountDataData.discounts.length,
+                    itemCount: DiscountData.discounts.length,
                     itemBuilder: (context, index) {
                       return MyCard(
                         discount:
-                            DiscountDataData.discounts[index]['discount']!,
+                            DiscountData.discounts[index]['discount']!,
                         discountImage:
-                            DiscountDataData.discounts[index]['discountImage']!,
+                            DiscountData.discounts[index]['discountImage']!,
                       );
                     },
                   ),
@@ -91,8 +89,6 @@ class LandingPage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
 }

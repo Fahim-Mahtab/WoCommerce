@@ -6,7 +6,6 @@ import 'package:woo_commerce/pages/category_page.dart';
 import 'package:woo_commerce/pages/more_page.dart';
 
 import '../components/my_bottom_nav.dart';
-import 'kids_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
