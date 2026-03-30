@@ -22,28 +22,41 @@ class MyCircleAvatar extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(5.0.w),
           child: GestureDetector(
-            child: CircleAvatar(
-              radius: 40.r,
-              backgroundImage: NetworkImage(imageUrl),
-            ),
             onTap: () {
               if (items == 'Men') {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MenSection()),
+                  MaterialPageRoute(builder: (context) => const MenSection()),
                 );
               } else if (items == 'Kids') {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => KidsSection()),
+                  MaterialPageRoute(builder: (context) => const KidsSection()),
                 );
               } else if (items == 'Women') {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => WomenSection()),
+                  MaterialPageRoute(builder: (context) => const WomenSection()),
                 );
               }
             },
+            child: CircleAvatar(
+              radius: 40.r,
+              backgroundColor: Colors.grey[200],
+              child: ClipOval(
+                child: Image.network(
+                  imageUrl,
+                  width: 80.r,
+                  height: 80.r,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) => Icon(
+                    Icons.person,
+                    size: 40.r,
+                    color: Colors.grey[600],
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
         Text(items, style: TextStyle(fontSize: 14.sp)),

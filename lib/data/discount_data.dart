@@ -1,4 +1,4 @@
-class DiscountDataData {
+class DiscountData {
   static final List<Map<String, String>> discounts = [
     {
       'discountImage': 'https://images.unsplash.com/photo-1705909237050-7a7625b47fac?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFuZGJhZ3xlbnwwfHwwfHx8MA%3D%3D',

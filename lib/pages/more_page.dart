@@ -6,26 +6,24 @@ class MorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'More Options',
-              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20.h),
-            _buildMoreOption(context, Icons.notifications_none_outlined, 'Notifications', () {}),
-            _buildMoreOption(context, Icons.language_outlined, 'Language', () {}),
-            _buildMoreOption(context, Icons.public_outlined, 'Country/Region', () {}),
-            _buildMoreOption(context, Icons.info_outline, 'About Us', () {}),
-            _buildMoreOption(context, Icons.contact_support_outlined, 'Contact Us', () {}),
-            _buildMoreOption(context, Icons.policy_outlined, 'Privacy Policy', () {}),
-            _buildMoreOption(context, Icons.description_outlined, 'Terms & Conditions', () {}),
-          ],
-        ),
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'More Options',
+            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 20.h),
+          _buildMoreOption(context, Icons.notifications_none_outlined, 'Notifications', () {}),
+          _buildMoreOption(context, Icons.language_outlined, 'Language', () {}),
+          _buildMoreOption(context, Icons.public_outlined, 'Country/Region', () {}),
+          _buildMoreOption(context, Icons.info_outline, 'About Us', () {}),
+          _buildMoreOption(context, Icons.contact_support_outlined, 'Contact Us', () {}),
+          _buildMoreOption(context, Icons.policy_outlined, 'Privacy Policy', () {}),
+          _buildMoreOption(context, Icons.description_outlined, 'Terms & Conditions', () {}),
+        ],
       ),
     );
   }
